@@ -6,6 +6,10 @@ import { Row, Col, Card } from "react-bootstrap";
 import Product from '../Product';
 import { listProducts } from '../../actions/productsActions';
 import { useDispatch, useSelector } from 'react-redux';
+import Loader from '../Loader';
+import Message from '../Message';
+
+
 
 function HomeScreen() {
     const dispatch = useDispatch()
@@ -37,8 +41,8 @@ function HomeScreen() {
                     ))}
                 </Row> */}
                 {
-                    loading ? (<h2> loading.......</h2>) : error ? (
-                        <h3>{error}</h3>
+                    loading ? (<h2><Loader></Loader></h2>) : error ? (
+                        <Message variant='danger'>{error}</Message>
                     ) :
                         <Row>
                             {products.map((product) => (
