@@ -15,7 +15,7 @@ function ProductScreen({ params }) {
             setProducts(data);
         }
         fetchproducts();
-    }, []);
+    }, [id]);
     return (
         <Container>
             <div><Link to="/" className='btn btn-dark my-3'> Go Back</Link>
@@ -58,7 +58,7 @@ function ProductScreen({ params }) {
                                     </Row>
                                 </ListGroupItem>
                                 <ListGroupItem>
-                                    <Button className='btn-black' disabled={product.countInStock == 0}
+                                    <Button className='btn-black' disabled={product.countInStock === 0}
                                         type='button'>Add me</Button>
                                 </ListGroupItem>
                             </ListGroup>
